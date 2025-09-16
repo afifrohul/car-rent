@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CityController;
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\TypeController;
+use App\Http\Controllers\CarController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -28,6 +32,34 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/cities', [CityController::class, 'index'])->name('cities.index');
+    Route::get('/cities/create', [CityController::class, 'create'])->name('cities.create');
+    Route::post('/cities', [CityController::class, 'store'])->name('cities.store');
+    Route::get('/cities/{id}/edit', [CityController::class, 'edit'])->name('cities.edit');
+    Route::put('/cities/{id}', [CityController::class, 'update'])->name('cities.update');
+    Route::delete('/cities/{id}', [CityController::class, 'destroy'])->name('cities.destroy');
+
+    Route::get('/brands', [BrandController::class, 'index'])->name('brands.index');
+    Route::get('/brands/create', [BrandController::class, 'create'])->name('brands.create');
+    Route::post('/brands', [BrandController::class, 'store'])->name('brands.store');
+    Route::get('/brands/{id}/edit', [BrandController::class, 'edit'])->name('brands.edit');
+    Route::put('/brands/{id}', [BrandController::class, 'update'])->name('brands.update');
+    Route::delete('/brands/{id}', [BrandController::class, 'destroy'])->name('brands.destroy');
+
+    Route::get('/types', [TypeController::class, 'index'])->name('types.index');
+    Route::get('/types/create', [TypeController::class, 'create'])->name('types.create');
+    Route::post('/types', [TypeController::class, 'store'])->name('types.store');
+    Route::get('/types/{id}/edit', [TypeController::class, 'edit'])->name('types.edit');
+    Route::put('/types/{id}', [TypeController::class, 'update'])->name('types.update');
+    Route::delete('/types/{id}', [TypeController::class, 'destroy'])->name('types.destroy');
+
+    Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
+    Route::get('/cars/create', [CarController::class, 'create'])->name('cars.create');
+    Route::post('/cars', [CarController::class, 'store'])->name('cars.store');
+    Route::get('/cars/{id}/edit', [CarController::class, 'edit'])->name('cars.edit');
+    Route::put('/cars/{id}', [CarController::class, 'update'])->name('cars.update');
+    Route::delete('/cars/{id}', [CarController::class, 'destroy'])->name('cars.destroy');
 });
 
 require __DIR__.'/auth.php';
