@@ -1,4 +1,5 @@
 import {
+    BadgeDollarSignIcon,
     CaravanIcon,
     CarFrontIcon,
     KeySquareIcon,
@@ -47,6 +48,11 @@ const items = [
         title: "Car",
         url: "/cars",
         icon: CarFrontIcon,
+    },
+    {
+        title: "Discount",
+        url: "/discounts",
+        icon: BadgeDollarSignIcon,
     },
 ];
 

@@ -31,7 +31,7 @@ export default function Index({ types }) {
                     <EditButton url={`/types/${row.original.id}/edit`} />
                     <DeleteButton
                         url={`/types/${row.original.id}`}
-                        confirmMessage="Are you sure to delete this question?"
+                        confirmMessage="Are you sure to delete this car type?"
                     />
                 </div>
             ),

@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             BrandSeeder::class,
             TypeSeeder::class,
             CarSeeder::class,
+            DiscountSeeder::class,
         ]);
     }
 }

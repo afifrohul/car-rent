@@ -52,7 +52,7 @@ export default function Index({ cars }) {
         {
             accessorKey: "rental_price",
             header: "Rental Price",
-            cell: (info) => `$${info.getValue()}`,
+            cell: (info) => `Rp${info.getValue()}`,
         },
         {
             id: "actions",
@@ -62,7 +62,7 @@ export default function Index({ cars }) {
                     <EditButton url={`/cars/${row.original.id}/edit`} />
                     <DeleteButton
                         url={`/cars/${row.original.id}`}
-                        confirmMessage="Are you sure to delete this question?"
+                        confirmMessage="Are you sure to delete this car?"
                     />
                 </div>
             ),

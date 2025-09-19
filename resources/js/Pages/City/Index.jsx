@@ -18,7 +18,7 @@ export default function Index({ cities }) {
                     table.getState().pagination.pageIndex *
                         table.getState().pagination.pageSize >
                 table.getPrePaginationRowModel().rows.length
-                    ? row.index + 1 
+                    ? row.index + 1
                     : row.index +
                       1 +
                       table.getState().pagination.pageIndex *
@@ -37,7 +37,7 @@ export default function Index({ cities }) {
                     <EditButton url={`/cities/${row.original.id}/edit`} />
                     <DeleteButton
                         url={`/cities/${row.original.id}`}
-                        confirmMessage="Are you sure to delete this question?"
+                        confirmMessage="Are you sure to delete this city?"
                     />
                 </div>
             ),

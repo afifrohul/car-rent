@@ -27,4 +27,9 @@ class Car extends Model
     {
         return $this->belongsTo(City::class);
     }
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
 }

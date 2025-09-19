@@ -7,7 +7,7 @@ import EditButton from "@/Components/EditButton";
 import DeleteButton from "@/Components/DeleteButton";
 import { Button } from "@/Components/ui/button";
 
-export default function Index({ brands }) {
+export default function Index({ discounts }) {
     const columns = [
         {
             id: "index",
@@ -19,19 +19,52 @@ export default function Index({ brands }) {
                     table.getState().pagination.pageSize,
         },
         {
-            accessorKey: "name",
-            header: "Car Brand Name",
+            accessorKey: "code",
+            header: "Discount Code",
             cell: (info) => info.getValue(),
+        },
+        {
+            accessorKey: "desc",
+            header: "Description",
+            cell: (info) =>
+                info.getValue().length > 20
+                    ? info.getValue().substring(0, 20) + "..."
+                    : info.getValue(),
+        },
+        {
+            accessorKey: "discount_value",
+            header: "Discount Value",
+            cell: (info) => info.getValue() + "%",
+        },
+        {
+            accessorKey: "min_transaction",
+            header: "Min Transaction",
+            cell: (info) => "$" + info.getValue(),
+        },
+        {
+            accessorKey: "start_date",
+            header: "Start Date",
+            cell: (info) => info.getValue(),
+        },
+        {
+            accessorKey: "end_date",
+            header: "End Date",
+            cell: (info) => info.getValue(),
+        },
+        {
+            accessorKey: "is_active",
+            header: "Status",
+            cell: (info) => (info.getValue() ? "Active" : "Inactive"),
         },
         {
             id: "actions",
             header: "Actions",
             cell: ({ row }) => (
                 <div className="flex gap-2 justify-start">
-                    <EditButton url={`/brands/${row.original.id}/edit`} />
+                    <EditButton url={`/discounts/${row.original.id}/edit`} />
                     <DeleteButton
-                        url={`/brands/${row.original.id}`}
-                        confirmMessage="Are you sure to delete this car brand?"
+                        url={`/discounts/${row.original.id}`}
+                        confirmMessage="Are you sure to delete this discount?"
                     />
                 </div>
             ),
@@ -43,13 +76,13 @@ export default function Index({ brands }) {
             <div className="w-full mx-auto flex flex-col gap-4">
                 <DataTable
                     columns={columns}
-                    data={brands}
+                    data={discounts}
                     createButton={
                         <Button
                             variant="outline"
-                            onClick={() => router.get("/brands/create")}
+                            onClick={() => router.get("/discounts/create")}
                         >
-                            <FaPlusCircle className="" /> Create New Car Brand
+                            <FaPlusCircle className="" /> Create New Discount
                         </Button>
                     }
                 />

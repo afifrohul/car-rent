@@ -300,7 +300,7 @@ export default function Create({ brands, types, cities }) {
                         </div>
                         <div>
                             <label className="block mb-1 text-sm font-medium">
-                                Rental Price ($)
+                                Rental Price (Rp)
                             </label>
                             <Input
                                 value={form.rental_price}

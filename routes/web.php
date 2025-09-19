@@ -6,6 +6,7 @@ use App\Http\Controllers\CityController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\DiscountController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -60,6 +61,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/cars/{id}/edit', [CarController::class, 'edit'])->name('cars.edit');
     Route::put('/cars/{id}', [CarController::class, 'update'])->name('cars.update');
     Route::delete('/cars/{id}', [CarController::class, 'destroy'])->name('cars.destroy');
+    Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
+    
+    Route::get('/discounts', [DiscountController::class, 'index'])->name('discounts.index');
+    Route::get('/discounts/create', [DiscountController::class, 'create'])->name('discounts.create');
+    Route::post('/discounts', [DiscountController::class, 'store'])->name('discounts.store');
+    Route::get('/discounts/{id}/edit', [DiscountController::class, 'edit'])->name('discounts.edit');
+    Route::put('/discounts/{id}', [DiscountController::class, 'update'])->name('discounts.update');
+    Route::delete('/discounts/{id}', [DiscountController::class, 'destroy'])->name('discounts.destroy');
 });
 
 require __DIR__.'/auth.php';
