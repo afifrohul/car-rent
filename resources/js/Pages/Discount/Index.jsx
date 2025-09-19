@@ -39,7 +39,7 @@ export default function Index({ discounts }) {
         {
             accessorKey: "min_transaction",
             header: "Min Transaction",
-            cell: (info) => "$" + info.getValue(),
+            cell: (info) => "Rp" + info.getValue(),
         },
         {
             accessorKey: "start_date",
@@ -71,8 +71,8 @@ export default function Index({ discounts }) {
         },
     ];
     return (
-        <AdminLayout siteHeader={<SiteHeader name="Car Brand" />}>
-            <Head title="Car Brand" />
+        <AdminLayout siteHeader={<SiteHeader name="Discount" />}>
+            <Head title="Discount" />
             <div className="w-full mx-auto flex flex-col gap-4">
                 <DataTable
                     columns={columns}
