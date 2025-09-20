@@ -13,16 +13,56 @@ class CitySeeder extends Seeder
     public function run(): void
     {
         \App\Models\City::insert([
-            ['name' => 'New York'],
-            ['name' => 'Los Angeles'],
-            ['name' => 'Chicago'],
-            ['name' => 'Houston'],
-            ['name' => 'Phoenix'],
-            ['name' => 'Philadelphia'],
-            ['name' => 'San Antonio'],
-            ['name' => 'San Diego'],
-            ['name' => 'Dallas'],
-            ['name' => 'San Jose'],
+            [
+                'name' => 'New York',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Los Angeles',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Chicago',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Houston',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Phoenix',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Philadelphia',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'San Antonio',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'San Diego',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Dallas',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'San Jose',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
         ]);
     }
 }

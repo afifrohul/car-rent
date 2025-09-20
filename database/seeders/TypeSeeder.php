@@ -13,16 +13,41 @@ class TypeSeeder extends Seeder
     public function run(): void
     {
         \App\Models\Type::insert([
-            ['name' => 'Sedan'],
-            ['name' => 'SUV'],
-            ['name' => 'Hatchback'],
-            ['name' => 'Convertible'],
-            ['name' => 'Coupe'],
-            ['name' => 'Wagon'],
-            ['name' => 'Van'],
-            ['name' => 'Pickup Truck'],
-            ['name' => 'Crossover'],
-            ['name' => 'Electric'],
+            [
+                'name' => 'Sedan',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'SUV',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Hatchback',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Convertible',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Coupe',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Minivan',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Pickup Truck',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ]);
     }
 }

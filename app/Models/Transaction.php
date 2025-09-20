@@ -17,6 +17,8 @@ class Transaction extends Model
         'end_time',
         'total_hours',
         'subtotal',
+        'discount_id',
+        'discount_code',
         'discount',
         'total_price',
         'status',

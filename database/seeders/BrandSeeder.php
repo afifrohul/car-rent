@@ -13,16 +13,55 @@ class BrandSeeder extends Seeder
     public function run(): void
     {
         \App\Models\Brand::insert([
-            ['name' => 'Toyota'],
-            ['name' => 'Honda'],
-            ['name' => 'Ford'],
-            ['name' => 'Chevrolet'],
-            ['name' => 'Nissan'],
-            ['name' => 'BMW'],
-            ['name' => 'Mercedes-Benz'],
-            ['name' => 'Volkswagen'],
-            ['name' => 'Audi'],
-            ['name' => 'Hyundai'],
+            [
+                'name' => 'Toyota',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [   'name' => 'Honda',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Ford',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Chevrolet',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'BMW',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Mercedes-Benz',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Audi',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Volkswagen',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Nissan',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Hyundai',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ]);
     }
 }

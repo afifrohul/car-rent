@@ -2,6 +2,9 @@ import {
     BadgeDollarSignIcon,
     CaravanIcon,
     CarFrontIcon,
+    FileCheck2Icon,
+    FileClockIcon,
+    FileX2Icon,
     KeySquareIcon,
     LayoutDashboardIcon,
     MapPinIcon,
@@ -56,6 +59,24 @@ const items = [
     },
 ];
 
+const transactions = [
+    {
+        title: "Pending Transactions",
+        url: "/pending-transactions",
+        icon: FileClockIcon,
+    },
+    {
+        title: "Failed Transactions",
+        url: "/failed-transactions",
+        icon: FileX2Icon,
+    },
+    {
+        title: "Success Transactions",
+        url: "/success-transactions",
+        icon: FileCheck2Icon,
+    },
+];
+
 export function AppSidebar() {
     const currentPath = new URL(location.href).pathname;
     const user = usePage().props.auth.user;
@@ -84,6 +105,31 @@ export function AppSidebar() {
                     <SidebarGroupContent>
                         <SidebarMenu>
                             {items.map((item) => {
+                                const isActive = currentPath.startsWith(
+                                    item.url
+                                );
+                                return (
+                                    <SidebarMenuItem key={item.title}>
+                                        <SidebarMenuButton
+                                            asChild
+                                            isActive={isActive}
+                                        >
+                                            <Link href={item.url}>
+                                                <item.icon className="mr-2 h-4 w-4" />
+                                                <span>{item.title}</span>
+                                            </Link>
+                                        </SidebarMenuButton>
+                                    </SidebarMenuItem>
+                                );
+                            })}
+                        </SidebarMenu>
+                    </SidebarGroupContent>
+                </SidebarGroup>
+                <SidebarGroup>
+                    <SidebarGroupLabel>Transactions</SidebarGroupLabel>
+                    <SidebarGroupContent>
+                        <SidebarMenu>
+                            {transactions.map((item) => {
                                 const isActive = currentPath.startsWith(
                                     item.url
                                 );
