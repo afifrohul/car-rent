@@ -43,11 +43,14 @@ return new class extends Migration
 
             // Payment info
             $table->string('payment_method')->nullable();
-            $table->enum('payment_status', ['waiting', 'success', 'failed'])->default('waiting');
+            $table->string('payment_status')->default('waiting');
+            $table->string('payment_type')->nullable();
+            $table->json('midtrans_payload')->nullable();
 
             // Midtrans identifiers
-            $table->string('midtrans_order_id')->nullable();
+            $table->string('midtrans_order_id')->unique()->nullable();
             $table->string('midtrans_transaction_id')->nullable();
+            $table->string('midtrans_snap_token')->nullable();
 
             $table->timestamps();
         });

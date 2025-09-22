@@ -24,8 +24,11 @@ class Transaction extends Model
         'status',
         'payment_method',
         'payment_status',
+        'payment_type',
+        'midtrans_payload',
         'midtrans_order_id',
-        'midtrans_transaction_id'
+        'midtrans_transaction_id',
+        'midtrans_snap_token',
     ];
 
     public function user()

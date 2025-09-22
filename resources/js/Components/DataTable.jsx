@@ -57,7 +57,7 @@ export default function DataTable({ columns, data, createButton = null }) {
             </div>
 
             <div className="border rounded-md overflow-x-auto">
-                <table className="w-full text-sm">
+                <table className="w-full text-xs">
                     <thead className="border-b">
                         {table.getHeaderGroups().map((headerGroup) => (
                             <tr key={headerGroup.id}>
@@ -109,7 +109,7 @@ export default function DataTable({ columns, data, createButton = null }) {
 
             {table && (
                 <div className="flex justify-between items-center mt-4">
-                    <p className="text-sm">
+                    <p className="text-xs">
                         Showing{" "}
                         {table.getPaginationRowModel().rows.length > 0
                             ? table.getState().pagination.pageIndex *
@@ -126,7 +126,7 @@ export default function DataTable({ columns, data, createButton = null }) {
                     </p>
                     <div className="flex items-center gap-4">
                         <div className="flex items-center gap-2">
-                            <p className="text-sm">Rows per page</p>
+                            <p className="text-xs">Rows per page</p>
                             <Select
                                 value={String(
                                     table.getState().pagination.pageSize
@@ -168,7 +168,7 @@ export default function DataTable({ columns, data, createButton = null }) {
                             >
                                 <MdKeyboardArrowLeft />
                             </Button>
-                            <span className="text-sm">
+                            <span className="text-xs">
                                 {table.getState().pagination.pageIndex + 1} /{" "}
                                 {table.getPageCount()}
                             </span>
