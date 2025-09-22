@@ -61,8 +61,8 @@ export default function Pending({ transactions }) {
             cell: (info) => info.getValue(),
         },
         {
-            accessorKey: "discount",
-            header: "Discount",
+            accessorKey: "discount_value",
+            header: "Discount Value",
             cell: (info) => info.getValue(),
         },
         {
@@ -86,9 +86,7 @@ export default function Pending({ transactions }) {
                 <div className="flex gap-2 justify-start">
                     <Button
                         onClick={() =>
-                            router.visit(
-                                `/transactions/${row.original.id}/detail`
-                            )
+                            router.visit(`/transaction/${row.original.id}/show`)
                         }
                         className="text-xs px-2"
                         size="sm"

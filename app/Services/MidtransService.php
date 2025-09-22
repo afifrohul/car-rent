@@ -31,10 +31,10 @@ class MidtransService
         ];
 
         // Item diskon (jika ada)
-        if ($transaction->discount > 0) {
+        if ($transaction->discount_value > 0) {
             $items[] = [
                 'id'       => 'DISCOUNT',
-                'price'    => -(int) $transaction->discount,
+                'price'    => -(int) $transaction->discount_value,
                 'quantity' => 1,
                 'name'     => 'Discount ' . ($transaction->discount_code ?? ''),
             ];

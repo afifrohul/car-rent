@@ -42,4 +42,15 @@ class TransactionController extends Controller
             return redirect()->back()->with('error', 'Failed to load transactions.');
         }
     }
+
+    public function show($id)
+    {
+        try {
+            $transaction = Transaction::with(['user', 'car', 'discount'])->findOrFail($id);
+            return Inertia::render('Transaction/Detail', compact('transaction'));
+        } catch (\Exception $e) {
+            Log::error('Error loading transaction detail: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Failed to load transaction detail.');
+        }
+    }
 }

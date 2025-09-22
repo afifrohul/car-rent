@@ -70,10 +70,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/discounts/{id}/edit', [DiscountController::class, 'edit'])->name('discounts.edit');
     Route::put('/discounts/{id}', [DiscountController::class, 'update'])->name('discounts.update');
     Route::delete('/discounts/{id}', [DiscountController::class, 'destroy'])->name('discounts.destroy');
-
+    
     Route::get('/pending-transactions', [TransactionController::class, 'pending'])->name('transaction.pending');
     Route::get('/failed-transactions', [TransactionController::class, 'failed'])->name('transaction.failed');
     Route::get('/success-transactions', [TransactionController::class, 'success'])->name('transaction.success');
+    Route::get('/transaction/{id}/show', [TransactionController::class, 'show'])->name('transaction.show');
 });
 
 require __DIR__.'/auth.php';

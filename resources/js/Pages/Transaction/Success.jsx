@@ -61,8 +61,8 @@ export default function Success({ transactions }) {
             cell: (info) => info.getValue(),
         },
         {
-            accessorKey: "discount",
-            header: "Discount",
+            accessorKey: "discount_value",
+            header: "Discount Value",
             cell: (info) => info.getValue(),
         },
         {
@@ -87,7 +87,7 @@ export default function Success({ transactions }) {
                     <Button
                         onClick={() =>
                             router.visit(
-                                `/transactions/${row.original.id}/detail`
+                                `/transaction/${row.original.id}/show`
                             )
                         }
                         className="text-xs px-2"

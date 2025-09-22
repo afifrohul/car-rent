@@ -33,7 +33,7 @@ return new class extends Migration
             // Diskon / Promo
             $table->foreignId('discount_id')->nullable()->constrained('discounts')->nullOnDelete();
             $table->string('discount_code')->nullable();
-            $table->decimal('discount', 12, 2)->default(0);
+            $table->decimal('discount_value', 12, 2)->default(0);
 
             // Total harga setelah diskon
             $table->decimal('total_price', 12, 2);

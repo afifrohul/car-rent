@@ -55,12 +55,12 @@ class TransactionController extends Controller
         $totalPrice = $subtotal - $discountAmount;
 
         return response()->json([
-            'car'          => $car->only(['id', 'name', 'brand', 'type', 'rental_price']),
-            'total_hours'  => $totalHours,
-            'subtotal'     => $subtotal,
-            'discount'     => $discountAmount,
-            'discount_code'=> $discountCode,
-            'total_price'  => $totalPrice,
+            'car'               => $car->only(['id', 'name', 'brand', 'type', 'rental_price']),
+            'total_hours'       => $totalHours,
+            'subtotal'          => $subtotal,
+            'discount_value'    => $discountAmount,
+            'discount_code'     => $discountCode,
+            'total_price'       => $totalPrice,
         ]);
     }
 
@@ -116,9 +116,9 @@ class TransactionController extends Controller
             'total_hours'  => $totalHours,
             'subtotal'     => $subtotal,
 
-            'discount_id'   => $discountId,
-            'discount_code' => $discountCode,
-            'discount'      => $discountAmount,
+            'discount_id'       => $discountId,
+            'discount_code'     => $discountCode,
+            'discount_value'    => $discountAmount,
 
             'total_price'    => $totalPrice,
             'status'         => 'pending',
@@ -182,7 +182,7 @@ class TransactionController extends Controller
         $transaction->midtrans_transaction_id = $notif->transaction_id ?? null;
         $transaction->payment_method          = $notif->issuer ?? null;
         $transaction->payment_type            = $notif->payment_type ?? null;
-        $transaction->midtrans_payload        = json_encode($request->all());
+        $transaction->midtrans_payload        = $request->all();
 
         // ✅ Update status sesuai notifikasi Midtrans
         if ($transactionStatus == 'capture') {

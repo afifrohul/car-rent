@@ -19,7 +19,7 @@ class Transaction extends Model
         'subtotal',
         'discount_id',
         'discount_code',
-        'discount',
+        'discount_value',
         'total_price',
         'status',
         'payment_method',
@@ -29,6 +29,10 @@ class Transaction extends Model
         'midtrans_order_id',
         'midtrans_transaction_id',
         'midtrans_snap_token',
+    ];
+
+    protected $casts = [
+        'midtrans_payload' => 'array',
     ];
 
     public function user()
