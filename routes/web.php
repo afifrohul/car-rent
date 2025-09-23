@@ -6,6 +6,7 @@ use App\Http\Controllers\CityController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\FAQController;
 use App\Http\Controllers\DiscountController;
 use App\Http\Controllers\TransactionController;
 use Illuminate\Foundation\Application;
@@ -70,6 +71,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/discounts/{id}/edit', [DiscountController::class, 'edit'])->name('discounts.edit');
     Route::put('/discounts/{id}', [DiscountController::class, 'update'])->name('discounts.update');
     Route::delete('/discounts/{id}', [DiscountController::class, 'destroy'])->name('discounts.destroy');
+
+    Route::get('/faqs', [FAQController::class, 'index'])->name('faqs.index');
+    Route::get('/faqs/create', [FAQController::class, 'create'])->name('faqs.create');
+    Route::post('/faqs', [FAQController::class, 'store'])->name('faqs.store');
+    Route::get('/faqs/{id}/edit', [FAQController::class, 'edit'])->name('faqs.edit');
+    Route::put('/faqs/{id}', [FAQController::class, 'update'])->name('faqs.update');
+    Route::delete('/faqs/{id}', [FAQController::class, 'destroy'])->name('faqs.destroy');
     
     Route::get('/pending-transactions', [TransactionController::class, 'pending'])->name('transaction.pending');
     Route::get('/failed-transactions', [TransactionController::class, 'failed'])->name('transaction.failed');

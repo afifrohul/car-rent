@@ -7,7 +7,7 @@ import EditButton from "@/Components/EditButton";
 import DeleteButton from "@/Components/DeleteButton";
 import { Button } from "@/Components/ui/button";
 
-export default function Index({ cars }) {
+export default function Index({ faqs }) {
     const columns = [
         {
             id: "index",
@@ -19,67 +19,42 @@ export default function Index({ cars }) {
                     table.getState().pagination.pageSize,
         },
         {
-            accessorKey: "name",
-            header: "Car Name",
+            accessorKey: "question",
+            header: "Question",
             cell: (info) => info.getValue(),
         },
         {
-            accessorKey: "user.name",
-            header: "Car Owner",
+            accessorKey: "answer",
+            header: "Answer",
             cell: (info) => info.getValue(),
-        },
-        {
-            accessorKey: "city.name",
-            header: "City",
-            cell: (info) => info.getValue(),
-        },
-        {
-            accessorKey: "brand.name",
-            header: "Brand",
-            cell: (info) => info.getValue(),
-        },
-        {
-            accessorKey: "type.name",
-            header: "Type",
-            cell: (info) => info.getValue(),
-        },
-        {
-            accessorKey: "fuel_type",
-            header: "Fuel Type",
-            cell: (info) => info.getValue(),
-        },
-        {
-            accessorKey: "rental_price",
-            header: "Rental Price",
-            cell: (info) => `Rp${info.getValue()}`,
         },
         {
             id: "actions",
             header: "Actions",
             cell: ({ row }) => (
                 <div className="flex gap-2 justify-start">
-                    <EditButton url={`/cars/${row.original.id}/edit`} />
+                    <EditButton url={`/faqs/${row.original.id}/edit`} />
                     <DeleteButton
-                        url={`/cars/${row.original.id}`}
-                        confirmMessage="Are you sure to delete this car?"
+                        url={`/faqs/${row.original.id}`}
+                        confirmMessage="Are you sure to delete this FAQ?"
                     />
                 </div>
             ),
         },
     ];
     return (
-        <AdminLayout siteHeader={<SiteHeader name="Car" />}>
-            <Head title="Car" />
+        <AdminLayout siteHeader={<SiteHeader name="FAQ" />}>
+            <Head title="FAQ" />
             <div className="w-full mx-auto flex flex-col gap-4">
                 <DataTable
                     columns={columns}
-                    data={cars}
+                    data={faqs}
                     createButton={
                         <Button
                             variant="outline"
-                            onClick={() => router.get("/cars/create")}
+                            onClick={() => router.get("/faqs/create")}
                         >
-                            <FaPlusCircle className="" /> Create New Car
+                            <FaPlusCircle className="" /> Create New FAQ
                         </Button>
                     }
                 />

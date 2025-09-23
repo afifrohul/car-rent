@@ -31,8 +31,6 @@ export default function Create({ brands, types, cities }) {
         rental_price: "",
     });
 
-    console.log(form);
-
     const handleChange = (key, value) => {
         setForm((prev) => ({ ...prev, [key]: value }));
     };

@@ -40,8 +40,6 @@ export default function Edit({ discount }) {
         is_active: discount.is_active ? "1" : "0",
     });
 
-    console.log(discount);
-
     const handleChange = (key, value) => {
         setForm((prev) => ({ ...prev, [key]: value }));
     };

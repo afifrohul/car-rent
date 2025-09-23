@@ -2,6 +2,7 @@ import {
     BadgeDollarSignIcon,
     CaravanIcon,
     CarFrontIcon,
+    CircleQuestionMarkIcon,
     FileCheck2Icon,
     FileClockIcon,
     FileX2Icon,
@@ -56,6 +57,11 @@ const items = [
         title: "Discount",
         url: "/discounts",
         icon: BadgeDollarSignIcon,
+    },
+    {
+        title: "FAQ",
+        url: "/faqs",
+        icon: CircleQuestionMarkIcon,
     },
 ];
 
